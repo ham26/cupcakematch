@@ -135,7 +135,7 @@ button:hover, a:hover {
 
 #left-canvas .outer-canvas {
   width: 98%;
-  height: 41rem;
+  height: 42rem;
   /*align-items center*/
   display: flex;
   align-items: center;
@@ -150,7 +150,7 @@ button:hover, a:hover {
 /*=============== set the height here ===========*/
 #right-canvas .outer-canvas {
   width: 94%;
-  height: 41rem;
+  height: 42rem;
   margin: auto;
 }
 
@@ -288,7 +288,7 @@ button:active {
 }
 
 #right-canvas .inner-canvas{
-  min-height: 38rem;
+  min-height: 40rem;
   text-align: center;
 
 }
@@ -541,7 +541,7 @@ footer p {
     }
 
     .card-container-inner {
-      margin: .2rem; 
+      margin: .2rem;
     }
 
 }
