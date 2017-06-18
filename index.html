@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Cupcake Match</title>
+    <link rel="stylesheet" type="text/css" href="resources/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/style.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Open+Sans:400,700" rel="stylesheet">
+    <link rel="icon" href="resources/images/main-assets/favicon.ico" type="image/gif" sizes="16x16">
+  </head>
+  <body>
+      <div class="container">
+        <header>
+            <div class="name-logo">
+              <h2 class="cupcake-title">Cupcake</h2>
+              <img src="resources/images/main-assets/logo-angled.png" alt="logo">
+              <h2>Match</h2>
+            </div>
+            <!-- <div class="sidebar-button" type="button" id="sidebar-button">
+                <img src="resources/images/buttons/sidebar-btn-hidden.png" alt="sidebar button">
+            </div> -->
+        </header>
+        <div class="main-container">
+          <div id="left-canvas" class="canvas">
+            <div id="top-data">
+              <div class="row-1">
+                <div class="player info">
+                  <h6><img src="resources/images/icons/player-icon.png" alt=""><span class="player-label">Player: </span> <span class="player-name-display" class="data-style"></span></h6>
+                </div>
+                <div class="level info">
+                  <h6>Level: <span class="level-number data-style"></span></h6>
+                </div>
+              </div>
+              <div class="row-2">
+                <div class="score info" >
+                  <h6>Score: <span class="total-score data-style"></span></h6>
+                </div>
+                <div class="munchies info">
+                  <img src="resources/images/icons/munchies.png" alt=""><h6>: <span id="munchies-left" class="data-style"> </span></h6>
+                </div>
+              </div>
+            </div> <!-- end of #top-data -->
+            <div class="outer-canvas">
+              <div id="messages" class="inner-canvas">
+                <!-- Welcome -->
+                <div id="get-player-name" class="message ">
+                  <h4>Welcome to Cupcake Match!</h4>
+                  <p class="prompt">Enter Your Name:</p>
+                  <input type="text" value="" placeholder="player name">
+                  <p class="small-p-font">Remaining Characters: <span id="maxChar"></span></p>
+                  <!-- <br> -->
+                  <button type="button" class="player-btn1 player-button-style" disabled="true">Play</button>
+                </div>
+                <!-- Level 1 intro -->
+                <div id="level1-msg-intro" class="message hide">
+                  <h4>Level 1</h4>
+                  <p>You are in for a sweet retreat!</p>
+                  <p>Match the cupcakes and earn a treat.</p>
+                  <div class="direction-image">
+                    <img src="resources/images/levels-directions/img-level-1.png" alt="level 1 directions">
+                  </div>
+                  <p>You have <span class="level-munchies"></span> munchies (click pairs) for the game to beat.</p>
+                  <button type="button" class="level-start-btn main-button-style ">Play</button>
+                </div>
+                <!-- Level 2 intro -->
+                <div id="level2-msg-intro" class="message hide">
+                  <h4>Level 2</h4>
+                  <p>Here's another level for you to frolic.</p>
+                  <p>But don't be tricked!</p>
+                  <p>Watch the outer cards when you click.</p>
+                  <div class="direction-image">
+                    <img src="resources/images/levels-directions/img-level-2.png" alt="level 1 directions">
+                  </div>
+                  <p>You have <span class="level-munchies"></span> munchies to stuff your cheeks.</p>
+                  <button type="button" class="level-start-btn main-button-style ">Play</button>
+                </div>
+                <!-- Level 3 intro -->
+                <div id="level3-msg-intro" class="message hide">
+                  <h4>Level 3</h4>
+                  <p>Another serving, you wish to dare?<p>
+                  <p>This won't be easy, so beware.<p>
+                  <p>The inner cards will move with each matching pair,<p>
+                  <p>while the outer cards will continue with their affair.</p>
+                  <div class="direction-image">
+                    <img src="resources/images/levels-directions/img-level-3.png" alt="level 1 directions">
+                  </div>
+                  <p>You have <span class="level-munchies"></span> munchies, make sure to have a spare.</p>
+                  <button type="button" class="level-start-btn main-button-style ">Play</button>
+                </div>
+                <!-- Level win -->
+                <div id="level-msg-win" class="message hide">
+                  <h4>Congratulations!</h4>
+                  <div class="direction-image">
+                    <img id="stars-image-large" src="" alt="level 1 directions">
+                  </div>
+                  <p>You earned <span id="level-score"></span> points!</p>
+                  <button type="button" id="next-level-btn" class="main-button-style ">Continue</button>
+                </div>
+                  <!-- Level lose -->
+                <div id="level-msg-lose" class="message hide">
+                  <h4>Sorry!</h4>
+                  <p>You are out of munchies.</p>
+                  <p>Do you care for another serving?</p>
+                  <button type="button" id="level-restart-btn" class="main-button-style ">Yes Please...</button>
+                </div>
+                <div id="level-msg-complete-game" class="message hide">
+                  <h4>You are great a muncher!</h4>
+                  <p>Are you are craving for more cupcakes?</p>
+                  <button type="button" id="game-restart-btn" class="main-button-style ">Yes, serve me more.</button>
+                </div>
+              </div><!-- inner-canvas ends -->
+              <!-- ================== GAMEBOARD =========================== -->
+              <div id="gameboard" class="hide">
+                <div class="inner-canvas">
+                  <div class="card-row">
+                    <div  class="card-container-outer-0">
+                      <div id="card-container-0" class="card-container-inner ">
+                        <!-- <img id="card-0" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="1" data-cardPosition="0"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-1">
+                      <div id="card-container-1"  class="card-container-inner">
+                        <!-- <img id="card-1" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="1" data-cardPosition="1"> -->
+                      </div>
+                    </div>
+                    <div  class="card-container-outer-2">
+                      <div id="card-container-2" class="card-container-inner">
+                        <!-- <img id="card-2" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="2" data-cardPosition="2"> -->
+                      </div>
+                    </div>
+                    <div  class="card-container-outer-3">
+                      <div id="card-container-3" class="card-container-inner">
+                        <!-- <img id="card-3" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="2" data-cardPosition="3"> -->
+                      </div>
+                    </div>
+                  </div><!-- row ends -->
+                  <div class="card-row">
+                    <div class="card-container-outer-4">
+                      <div id="card-container-4"  class="card-container-inner">
+                        <!-- <img id="card-4" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="3" data-cardPosition="4"> -->
+                      </div>
+                    </div>
+                    <div  class="card-container-outer-5">
+                      <div id="card-container-5" class="card-container-inner">
+                        <!-- <img id="card-5" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="3" data-cardPosition="5"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-6">
+                      <div id="card-container-6" class="card-container-inner">
+                        <!-- <img id="card-6" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="4" data-cardPosition="6"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-7">
+                      <div id="card-container-7" class="card-container-inner">
+                        <!-- <img id="card-7" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="4" data-cardPosition="7"> -->
+                      </div>
+                    </div>
+                  </div><!-- row ends -->
+                  <div class="card-row">
+                    <div class="card-container-outer-8">
+                      <div id="card-container-8" class="card-container-inner">
+                        <!-- <img id="card-8" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="5" data-cardPosition="8"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-9">
+                      <div id="card-container-9" class="card-container-inner">
+                        <!-- <img id="card-9" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="5" data-cardPosition="9"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-10">
+                      <div id="card-container-10" class="card-container-inner">
+                        <!-- <img id="card-10" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="6" data-cardPosition="10"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-11">
+                      <div id="card-container-11" class="card-container-inner">
+                        <!-- <img id="card-11" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="6" data-cardPosition="11"> -->
+                      </div>
+                    </div>
+                  </div><!-- row ends -->
+                  <div class="card-row">
+                    <div class="card-container-outer-12">
+                      <div id="card-container-12" class="card-container-inner">
+                        <!-- <img id="card-12" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="7" data-cardPosition="12"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-13">
+                      <div id="card-container-13" class="card-container-inner">
+                        <!-- <img id="card-13" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="7" data-cardPosition="13"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-14">
+                      <div id="card-container-14" class="card-container-inner">
+                        <!-- <img id="card-14" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="8" data-cardPosition="14"> -->
+                      </div>
+                    </div>
+                    <div class="card-container-outer-15">
+                      <div id="card-container-15" class="card-container-inner">
+                        <!-- <img id="card-15" src="resources/images/cupcakes/card-back.jpg" alt="card" data-cardNumber="8" data-cardPosition="15"> -->
+                      </div>
+                    </div>
+                  </div><!-- row ends -->
+                </div><!-- .innercanvas ends -->
+              </div><!-- #gameboard ends -->
+            </div><!-- outer-canvas ends -->
+          </div><!-- left-canvas ends -->
+          <div id="right-canvas" class="canvas">
+            <div class="outer-canvas">
+              <div class="inner-canvas">
+                <div class="nameContainer">
+                  <h2 class="player-name-display">Player</h2>
+                </div>
+                <div class="border"></div>
+                <p>Total Score:</p>
+                <h5 class="total-score">0</h5>
+                <div class="border"></div>
+                <h6 class="levelLabel">Level</h6>
+                <div class="levelNumber font-opensans">
+                  <h3 class="level-number">1</h3>
+                </div>
+                <div class="stars">
+                  <img id="stars-image-small" src=""  class="hide">
+                </div>
+                <div class="attempts">
+                  <div class="attempts-box">
+                    <p>Found Matches:</p>
+                    <h6><span id="correct-attempts">0</span>/8</h6>
+                    <p>Total Attempts Made:</p>
+                    <h6><span id="total-attempts"></span></h6>
+                    </div>
+                  </div>
+                  <div class="munchies-box">
+                    <h6>Munchies:</h6>
+                    <div class="munchies-outer-container hide">
+                        <!-- <img src="resources/images/icons/munchies.png" class="munchies" alt="munchies"> -->
+                    </div>
+                  </div>
+
+                </div><!-- .attempts ends -->
+
+              </div><!-- right-canvas inner-canvas ends -->
+            </div>
+          </div>
+          <footer>
+            <div>
+              <p>Melvin Aragon</p>
+            </div>
+          </footer>
+        </div> <!-- .main-container ends -->
+
+      </div><!-- outside container -->
+      <script src="resources/js/jquery-3.2.1.min.js"></script>
+      <script src="resources/js/game.js"></script>
+  </body>
+</html>
