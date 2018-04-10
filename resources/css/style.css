@@ -135,7 +135,7 @@ button:hover, a:hover {
 
 #left-canvas .outer-canvas {
   width: 98%;
-  height: 42rem;
+  height: 41rem;
   /*align-items center*/
   display: flex;
   align-items: center;
@@ -150,7 +150,7 @@ button:hover, a:hover {
 /*=============== set the height here ===========*/
 #right-canvas .outer-canvas {
   width: 94%;
-  height: 42rem;
+  height: 41rem;
   margin: auto;
 }
 
@@ -221,6 +221,7 @@ button:hover, a:hover {
 
 /*card container*/
 .card-container-inner {
+
   overflow: hidden;
   margin: .4rem;
   max-width: 9.2rem;
@@ -233,6 +234,7 @@ button:hover, a:hover {
   -webkit-box-shadow: 6px 8px 9px -4px rgba(2,5,20,0.29);
   -moz-box-shadow: 6px 8px 9px -4px rgba(2,5,20,0.29);
   box-shadow: 6px 8px 9px -4px rgba(2,5,20,0.29);
+
 }
 
 .card-container-inner:active {
@@ -288,9 +290,15 @@ button:active {
 }
 
 #right-canvas .inner-canvas{
-  min-height: 40rem;
+  min-height: 38rem;
   text-align: center;
 
+}
+
+.matches-and-attempts {
+	font-size: 1.25em;
+	font-weight: bold;
+	margin: 1em;
 }
 
 .nameContainer {
@@ -387,7 +395,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 1rem;
+  height: 1rem;
 }
 footer p {
   font-size: 0.8rem;
@@ -538,10 +546,6 @@ footer p {
 
     header img {
       width: 40px;
-    }
-
-    .card-container-inner {
-      margin: .2rem;
     }
 
 }
