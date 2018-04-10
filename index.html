@@ -26,7 +26,7 @@
             <div id="top-data">
               <div class="row-1">
                 <div class="player info">
-                  <h6><img src="resources/images/icons/player-icon.png" alt=""><span class="player-label">Player: </span> <span class="player-name-display" class="data-style"></span></h6>
+                  <h6><img src="resources/images/icons/player-icon.png" alt=""><span class="player-label">Player: </span><span class="player-name-display data-style"></span></h6>
                 </div>
                 <div class="level info">
                   <h6>Level: <span class="level-number data-style"></span></h6>
@@ -46,8 +46,8 @@
                 <!-- Welcome -->
                 <div id="get-player-name" class="message ">
                   <h4>Welcome to Cupcake Match!</h4>
-                  <p class="prompt">Enter Your Name:</p>
-                  <input type="text" value="" placeholder="player name">
+                  <p class="prompt">Enter Your Nickname:</p>
+                  <input type="text" value="" placeholder="enter your name">
                   <p class="small-p-font">Remaining Characters: <span id="maxChar"></span></p>
                   <!-- <br> -->
                   <button type="button" class="player-btn1 player-button-style" disabled="true">Play</button>
@@ -92,7 +92,7 @@
                 <div id="level-msg-win" class="message hide">
                   <h4>Congratulations!</h4>
                   <div class="direction-image">
-                    <img id="stars-image-large" src="" alt="level 1 directions">
+                    <img id="stars-image-large" src="#" alt="level 1 directions">
                   </div>
                   <p>You earned <span id="level-score"></span> points!</p>
                   <button type="button" id="next-level-btn" class="main-button-style ">Continue</button>
@@ -220,7 +220,7 @@
                   <h3 class="level-number">1</h3>
                 </div>
                 <div class="stars">
-                  <img id="stars-image-small" src=""  class="hide">
+                  <img id="stars-image-small" src="#"  class="hide" alt="image of small star">
                 </div>
                 <div class="attempts">
                   <div class="attempts-box">
@@ -236,7 +236,6 @@
                         <!-- <img src="resources/images/icons/munchies.png" class="munchies" alt="munchies"> -->
                     </div>
                   </div>
-
                 </div><!-- .attempts ends -->
 
               </div><!-- right-canvas inner-canvas ends -->
@@ -248,8 +247,6 @@
             </div>
           </footer>
         </div> <!-- .main-container ends -->
-
-      </div><!-- outside container -->
       <script src="resources/js/jquery-3.2.1.min.js"></script>
       <script src="resources/js/game.js"></script>
   </body>
